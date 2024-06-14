@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Computer Science"
+    },
+    {
+        "id": 2,
+        "name": "Artificial Intelligence"
+    },
+    {
+        "id": 3,
+        "name": "Machine Learning"
+    },
+    {
+        "id": 4,
+        "name": "Data Science"
+    },
+    {
+        "id": 5,
+        "name": "Cybersecurity"
+    },
+    {
+        "id": 6,
+        "name": "Software Engineering"
+    }
+]

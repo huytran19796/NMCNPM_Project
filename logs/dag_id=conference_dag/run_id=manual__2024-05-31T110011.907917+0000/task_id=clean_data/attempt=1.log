@@ -1,0 +1,31 @@
+[2024-05-31T11:00:13.902+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.clean_data manual__2024-05-31T11:00:11.907917+00:00 [queued]>
+[2024-05-31T11:00:13.910+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.clean_data manual__2024-05-31T11:00:11.907917+00:00 [queued]>
+[2024-05-31T11:00:13.910+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-31T11:00:13.910+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-05-31T11:00:13.911+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-31T11:00:13.924+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): clean_data> on 2024-05-31 11:00:11.907917+00:00
+[2024-05-31T11:00:13.927+0000] {standard_task_runner.py:55} INFO - Started process 1560 to run task
+[2024-05-31T11:00:13.929+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'conference_dag', 'clean_data', 'manual__2024-05-31T11:00:11.907917+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/conference_dag.py', '--cfg-path', '/tmp/tmpd5c6bole']
+[2024-05-31T11:00:13.930+0000] {standard_task_runner.py:83} INFO - Job 17: Subtask clean_data
+[2024-05-31T11:00:13.978+0000] {task_command.py:388} INFO - Running <TaskInstance: conference_dag.clean_data manual__2024-05-31T11:00:11.907917+00:00 [running]> on host 312e62f5d623
+[2024-05-31T11:00:14.032+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=conference_dag
+AIRFLOW_CTX_TASK_ID=clean_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-05-31T11:00:11.907917+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-05-31T11:00:11.907917+00:00
+[2024-05-31T11:00:14.034+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-05-31T11:00:14.034+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'set -e; python /opt/***/dags/clean_all.py']
+[2024-05-31T11:00:14.042+0000] {subprocess.py:86} INFO - Output:
+[2024-05-31T11:00:14.225+0000] {subprocess.py:93} INFO - Table 'conferences' does not exist.
+[2024-05-31T11:00:14.225+0000] {subprocess.py:93} INFO - Table 'presenters' does not exist.
+[2024-05-31T11:00:14.225+0000] {subprocess.py:93} INFO - Table 'locations' does not exist.
+[2024-05-31T11:00:14.226+0000] {subprocess.py:93} INFO - Table 'fields' does not exist.
+[2024-05-31T11:00:14.230+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-31T11:00:14.250+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=conference_dag, task_id=clean_data, execution_date=20240531T110011, start_date=20240531T110013, end_date=20240531T110014
+[2024-05-31T11:00:14.302+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-05-31T11:00:14.326+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

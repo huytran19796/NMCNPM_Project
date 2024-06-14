@@ -1,0 +1,27 @@
+[2024-05-29T16:02:06.060+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.transform_presenter manual__2024-05-29T16:01:52.799526+00:00 [queued]>
+[2024-05-29T16:02:06.068+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.transform_presenter manual__2024-05-29T16:01:52.799526+00:00 [queued]>
+[2024-05-29T16:02:06.068+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T16:02:06.069+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-05-29T16:02:06.070+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T16:02:06.082+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): transform_presenter> on 2024-05-29 16:01:52.799526+00:00
+[2024-05-29T16:02:06.087+0000] {standard_task_runner.py:55} INFO - Started process 18258 to run task
+[2024-05-29T16:02:06.089+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'conference_dag', 'transform_presenter', 'manual__2024-05-29T16:01:52.799526+00:00', '--job-id', '118', '--raw', '--subdir', 'DAGS_FOLDER/conference_dag.py', '--cfg-path', '/tmp/tmphs8ndfth']
+[2024-05-29T16:02:06.090+0000] {standard_task_runner.py:83} INFO - Job 118: Subtask transform_presenter
+[2024-05-29T16:02:06.143+0000] {task_command.py:388} INFO - Running <TaskInstance: conference_dag.transform_presenter manual__2024-05-29T16:01:52.799526+00:00 [running]> on host 731e27f62632
+[2024-05-29T16:02:06.195+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=conference_dag
+AIRFLOW_CTX_TASK_ID=transform_presenter
+AIRFLOW_CTX_EXECUTION_DATE=2024-05-29T16:01:52.799526+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-05-29T16:01:52.799526+00:00
+[2024-05-29T16:02:06.197+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-05-29T16:02:06.198+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'set -e; python /opt/***/data_transform/transform_presenter.py']
+[2024-05-29T16:02:06.205+0000] {subprocess.py:86} INFO - Output:
+[2024-05-29T16:02:06.348+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-29T16:02:06.368+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=conference_dag, task_id=transform_presenter, execution_date=20240529T160152, start_date=20240529T160206, end_date=20240529T160206
+[2024-05-29T16:02:06.384+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-05-29T16:02:06.404+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

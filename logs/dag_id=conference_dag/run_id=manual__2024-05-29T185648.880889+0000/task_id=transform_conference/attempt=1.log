@@ -1,0 +1,28 @@
+[2024-05-29T18:57:20.794+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.transform_conference manual__2024-05-29T18:56:48.880889+00:00 [queued]>
+[2024-05-29T18:57:20.802+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.transform_conference manual__2024-05-29T18:56:48.880889+00:00 [queued]>
+[2024-05-29T18:57:20.803+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T18:57:20.804+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-05-29T18:57:20.806+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T18:57:20.817+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): transform_conference> on 2024-05-29 18:56:48.880889+00:00
+[2024-05-29T18:57:20.821+0000] {standard_task_runner.py:55} INFO - Started process 40760 to run task
+[2024-05-29T18:57:20.824+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'conference_dag', 'transform_conference', 'manual__2024-05-29T18:56:48.880889+00:00', '--job-id', '317', '--raw', '--subdir', 'DAGS_FOLDER/conference_dag.py', '--cfg-path', '/tmp/tmpy9xd0469']
+[2024-05-29T18:57:20.825+0000] {standard_task_runner.py:83} INFO - Job 317: Subtask transform_conference
+[2024-05-29T18:57:20.879+0000] {task_command.py:388} INFO - Running <TaskInstance: conference_dag.transform_conference manual__2024-05-29T18:56:48.880889+00:00 [running]> on host 731e27f62632
+[2024-05-29T18:57:20.932+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=conference_dag
+AIRFLOW_CTX_TASK_ID=transform_conference
+AIRFLOW_CTX_EXECUTION_DATE=2024-05-29T18:56:48.880889+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-05-29T18:56:48.880889+00:00
+[2024-05-29T18:57:20.933+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-05-29T18:57:20.934+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'set -e; python /opt/***/data_transform/transform_conference.py']
+[2024-05-29T18:57:20.942+0000] {subprocess.py:86} INFO - Output:
+[2024-05-29T18:57:21.067+0000] {subprocess.py:93} INFO - Dữ liệu đã được định dạng lại và lưu vào /opt/***/data_stage_2/conferences.json
+[2024-05-29T18:57:21.072+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-29T18:57:21.095+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=conference_dag, task_id=transform_conference, execution_date=20240529T185648, start_date=20240529T185720, end_date=20240529T185721
+[2024-05-29T18:57:21.117+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-05-29T18:57:21.141+0000] {taskinstance.py:2578} INFO - 3 downstream tasks scheduled from follow-on schedule check

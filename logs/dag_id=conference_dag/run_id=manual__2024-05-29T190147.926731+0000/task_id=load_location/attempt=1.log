@@ -1,0 +1,27 @@
+[2024-05-29T19:02:20.196+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.load_location manual__2024-05-29T19:01:47.926731+00:00 [queued]>
+[2024-05-29T19:02:20.204+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.load_location manual__2024-05-29T19:01:47.926731+00:00 [queued]>
+[2024-05-29T19:02:20.205+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T19:02:20.205+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-05-29T19:02:20.206+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T19:02:20.217+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): load_location> on 2024-05-29 19:01:47.926731+00:00
+[2024-05-29T19:02:20.222+0000] {standard_task_runner.py:55} INFO - Started process 41470 to run task
+[2024-05-29T19:02:20.224+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'conference_dag', 'load_location', 'manual__2024-05-29T19:01:47.926731+00:00', '--job-id', '340', '--raw', '--subdir', 'DAGS_FOLDER/conference_dag.py', '--cfg-path', '/tmp/tmpuqf6yl_z']
+[2024-05-29T19:02:20.225+0000] {standard_task_runner.py:83} INFO - Job 340: Subtask load_location
+[2024-05-29T19:02:20.279+0000] {task_command.py:388} INFO - Running <TaskInstance: conference_dag.load_location manual__2024-05-29T19:01:47.926731+00:00 [running]> on host 731e27f62632
+[2024-05-29T19:02:20.335+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=conference_dag
+AIRFLOW_CTX_TASK_ID=load_location
+AIRFLOW_CTX_EXECUTION_DATE=2024-05-29T19:01:47.926731+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-05-29T19:01:47.926731+00:00
+[2024-05-29T19:02:20.336+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-05-29T19:02:20.337+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'set -e; python /opt/***/mysql_utils/load_location.py']
+[2024-05-29T19:02:20.345+0000] {subprocess.py:86} INFO - Output:
+[2024-05-29T19:02:20.551+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-29T19:02:20.578+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=conference_dag, task_id=load_location, execution_date=20240529T190147, start_date=20240529T190220, end_date=20240529T190220
+[2024-05-29T19:02:20.597+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2024-05-29T19:02:20.624+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,37 @@
+[2024-05-29T16:06:07.621+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.transform_presenter manual__2024-05-29T16:05:56.650606+00:00 [queued]>
+[2024-05-29T16:06:07.630+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.transform_presenter manual__2024-05-29T16:05:56.650606+00:00 [queued]>
+[2024-05-29T16:06:07.630+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T16:06:07.631+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-05-29T16:06:07.631+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T16:06:07.643+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): transform_presenter> on 2024-05-29 16:05:56.650606+00:00
+[2024-05-29T16:06:07.648+0000] {standard_task_runner.py:55} INFO - Started process 18782 to run task
+[2024-05-29T16:06:07.651+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'conference_dag', 'transform_presenter', 'manual__2024-05-29T16:05:56.650606+00:00', '--job-id', '123', '--raw', '--subdir', 'DAGS_FOLDER/conference_dag.py', '--cfg-path', '/tmp/tmp4jm20g6i']
+[2024-05-29T16:06:07.652+0000] {standard_task_runner.py:83} INFO - Job 123: Subtask transform_presenter
+[2024-05-29T16:06:07.705+0000] {task_command.py:388} INFO - Running <TaskInstance: conference_dag.transform_presenter manual__2024-05-29T16:05:56.650606+00:00 [running]> on host 731e27f62632
+[2024-05-29T16:06:07.765+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=conference_dag
+AIRFLOW_CTX_TASK_ID=transform_presenter
+AIRFLOW_CTX_EXECUTION_DATE=2024-05-29T16:05:56.650606+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-05-29T16:05:56.650606+00:00
+[2024-05-29T16:06:07.766+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-05-29T16:06:07.767+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'set -e; python /opt/***/data_transform/transform_presenter.py']
+[2024-05-29T16:06:07.775+0000] {subprocess.py:86} INFO - Output:
+[2024-05-29T16:06:07.903+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-05-29T16:06:07.903+0000] {subprocess.py:93} INFO -   File "/opt/***/data_transform/transform_presenter.py", line 14, in <module>
+[2024-05-29T16:06:07.903+0000] {subprocess.py:93} INFO -     raise FileNotFoundError(f"Tệp {input_file} không tồn tại. Vui lòng kiểm tra đường dẫn.")
+[2024-05-29T16:06:07.904+0000] {subprocess.py:93} INFO - FileNotFoundError: Tệp /opt/***/data_stage_2/conferences.json không tồn tại. Vui lòng kiểm tra đường dẫn.
+[2024-05-29T16:06:07.906+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-05-29T16:06:07.916+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-05-29T16:06:07.920+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=conference_dag, task_id=transform_presenter, execution_date=20240529T160556, start_date=20240529T160607, end_date=20240529T160607
+[2024-05-29T16:06:07.932+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 123 for task transform_presenter (Bash command failed. The command returned a non-zero exit code 1.; 18782)
+[2024-05-29T16:06:07.944+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2024-05-29T16:06:08.009+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

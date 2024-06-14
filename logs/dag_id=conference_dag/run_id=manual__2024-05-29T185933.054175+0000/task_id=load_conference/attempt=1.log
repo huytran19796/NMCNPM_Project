@@ -1,0 +1,37 @@
+[2024-05-29T19:00:07.722+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.load_conference manual__2024-05-29T18:59:33.054175+00:00 [queued]>
+[2024-05-29T19:00:07.730+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: conference_dag.load_conference manual__2024-05-29T18:59:33.054175+00:00 [queued]>
+[2024-05-29T19:00:07.731+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T19:00:07.731+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2024-05-29T19:00:07.732+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2024-05-29T19:00:07.744+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): load_conference> on 2024-05-29 18:59:33.054175+00:00
+[2024-05-29T19:00:07.748+0000] {standard_task_runner.py:55} INFO - Started process 41181 to run task
+[2024-05-29T19:00:07.750+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'conference_dag', 'load_conference', 'manual__2024-05-29T18:59:33.054175+00:00', '--job-id', '334', '--raw', '--subdir', 'DAGS_FOLDER/conference_dag.py', '--cfg-path', '/tmp/tmpp1dyuwsv']
+[2024-05-29T19:00:07.751+0000] {standard_task_runner.py:83} INFO - Job 334: Subtask load_conference
+[2024-05-29T19:00:07.806+0000] {task_command.py:388} INFO - Running <TaskInstance: conference_dag.load_conference manual__2024-05-29T18:59:33.054175+00:00 [running]> on host 731e27f62632
+[2024-05-29T19:00:07.864+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=conference_dag
+AIRFLOW_CTX_TASK_ID=load_conference
+AIRFLOW_CTX_EXECUTION_DATE=2024-05-29T18:59:33.054175+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-05-29T18:59:33.054175+00:00
+[2024-05-29T19:00:07.865+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-05-29T19:00:07.866+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'set -e; python /opt/***/mysql_utils/load_conference.py']
+[2024-05-29T19:00:07.873+0000] {subprocess.py:86} INFO - Output:
+[2024-05-29T19:00:08.066+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-05-29T19:00:08.067+0000] {subprocess.py:93} INFO -   File "/opt/***/mysql_utils/load_conference.py", line 15, in <module>
+[2024-05-29T19:00:08.067+0000] {subprocess.py:93} INFO -     cur.execute('INSERT INTO locations(id, name, link, deadline, subformat, field_id, presenter_id, location_id, from_date, to_date, report_date) VALUES(%s, %s, %s)', (row['id'], row['name'], row['link'], row['deadline'], row['subformat'], row['field_id'], row['presenter_id'], row['location_id'], row['from_date'], row['to_date'], row['report_date']))
+[2024-05-29T19:00:08.067+0000] {subprocess.py:93} INFO - KeyError: 'id'
+[2024-05-29T19:00:08.073+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-05-29T19:00:08.082+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-05-29T19:00:08.084+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=conference_dag, task_id=load_conference, execution_date=20240529T185933, start_date=20240529T190007, end_date=20240529T190008
+[2024-05-29T19:00:08.100+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 334 for task load_conference (Bash command failed. The command returned a non-zero exit code 1.; 41181)
+[2024-05-29T19:00:08.123+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2024-05-29T19:00:08.141+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
